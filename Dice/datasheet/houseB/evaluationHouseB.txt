@@ -1,0 +1,14 @@
+13 days, 21:52:17, 22 sensor
+-Cách 1: Nếu trượt của sổ với duration = 1m thì:
+	+ sensorStateSet = 20034
+	+ Lấy 18031 sensorStateSet cho phần thu thập dữ liệu và 2003 sensorStateSet để chạy thử.
+	+ Chia được 189 group /18031 
+	+ Thu được 1 lỗi
+	+ tỉ lệ lỗi = 1/2003 = 0.05%
+-Cách 2: Nếu bỏ đi những khoảng thời gian dài mà sensor không hoạt động (t > 2*duration) thì:
+	+ 3126 sensorStateSet 
+	+ Lấy 2813 sensorStateSet cho phần thu thập dữ liệu và 313 sensorStateSet để chạy thử.
+	+ chia được 187 group/2813
+	+ Thu được 18 lỗi 
+	+ tỉ lệ lỗi = 18/313 = 5.75%
+	+ đánh giá: vì 313 sensorStateSet chủ yếu là KitchenPIR hoạt động nên số lỗi ít

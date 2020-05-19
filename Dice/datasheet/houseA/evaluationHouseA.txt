@@ -1,0 +1,14 @@
+27 days, 18:44:32; 14 sensor
+-Cách 1: Nếu trượt của sổ với duration = 1m thì:
+	+ sensorStateSet = 37132()
+	+ Lấy 33419 sensorStateSet cho phần thu thập dữ liệu và 3713 sensorStateSet để chạy thử.
+	+ Chia được 110 group /33419 
+	+ Thu được 15 lỗi
+	+ tỉ lệ lỗi = 15/3713 = 0.4 %
+-Cách 2: Nếu bỏ đi những khoảng thời gian dài mà sensor không hoạt động (t > 2*duration) thì:
+	+ 1154 sensorStateSet
+	+ Lấy 1039 sensorStateSet cho phần thu thập dữ liệu và 153 sensorStateSet để chạy thử.
+	+ Chia được 108 group/32806
+	+ Thu được 18 lỗi
+	+ tỉ lệ lỗi = 18/155 = 11.61%
+- Nhận xét: vì ở trong TH1, có nhiều khoảng thời gian mà không có dữ liệu nên số sensorStateSet có tất cả các giá trị là 0 nhiều (hầu như không có ý nghĩa) và sẽ ảnh hưởng đến tỉ lệ lỗi

@@ -1,0 +1,14 @@
+18 days, 9:25:37; 21 sensor
+-Cách 1: Nếu trượt của sổ với duration = 1m thì:
+	+ sensorStateSet = 26486
+	+ Lấy 23837 sensorStateSet cho phần thu thập dữ liệu và 2649 sensorStateSet để chạy thử.
+	+ Chia được 142 group /23837 
+	+ Thu được 107 lỗi
+	+ tỉ lệ lỗi = 107/2649 = 4.04%
+-Cách 2: Nếu bỏ đi những khoảng thời gian dài mà sensor không hoạt động (t > 2*duration) thì:
+	+ 4778 sensorStateSet 
+	+ Lấy 4300 sensorStateSet cho phần thu thập dữ liệu và 478 sensorStateSet để chạy thử.
+	+ chia được 139 group/4300
+	+ Thu được 41 lỗi 
+	+ tỉ lệ lỗi = 21/478 =8.58%
+	+ đánh giá: vì 400 sensorStateSet chủ yếu chỉ có BedRight hoạt động nên số lỗi ít
